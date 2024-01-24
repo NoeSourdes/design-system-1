@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.ripple {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+  transform-origin: center;
+  animation: ripple 300ms linear;
+  animation-fill-mode: forwards;
+  z-index: 1;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(10); /* Increase this value to make the circle larger */
+    opacity: 0;
+  }
+}
